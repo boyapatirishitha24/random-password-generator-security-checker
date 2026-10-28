@@ -9,6 +9,12 @@ Open `index.html` in a modern browser. Password generation uses the browser's cr
 ## Features
 
 - Generate passwords from 8 to 64 characters, choosing lowercase, uppercase, numbers, and symbols.
+- Generate memorable multi-word passphrases with a selectable word count.
+- Choose quick 16, 24, or 32 character presets for random passwords.
+- Reveal or hide the generated password on screen.
+- Switch between light and dark themes; the theme preference is saved in the browser.
+- Choose a hyphen, space, or period between passphrase words.
+- Clear the displayed password and checker results immediately.
 - Exclude visually similar characters and copy a generated password.
 - Check an entered password's estimated entropy, length, character variety, repeated characters, and common patterns.
 - Keep all password processing in the browser. The checker does not save or transmit what you enter.
