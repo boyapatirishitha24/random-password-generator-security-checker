@@ -1,10 +1,22 @@
 # Keysmith — Password Generator and Security Checker
 
-A responsive, dependency-free password tool that runs in your browser.
+A responsive password tool with a small Node.js backend and a local browser checker.
 
 ## Run it
 
-Open `index.html` in a modern browser. Password generation uses the browser's cryptographically secure random number generator (`crypto.getRandomValues`). No build step or installation is required.
+### Run with the backend
+
+Requires Node.js 18 or newer. From this folder, run:
+
+```sh
+npm start
+```
+
+Then open <http://127.0.0.1:3000>. The server uses Node's `crypto.randomInt` for unbiased password and passphrase generation. The API does not save or log generated passwords.
+
+### Open as a local file
+
+You can still open `index.html` directly. In that mode the browser generates passwords with `crypto.getRandomValues`; no backend is needed.
 
 ## Features
 
@@ -17,8 +29,16 @@ Open `index.html` in a modern browser. Password generation uses the browser's cr
 - Clear the displayed password and checker results immediately.
 - Exclude visually similar characters and copy a generated password.
 - Check an entered password's estimated entropy, length, character variety, repeated characters, and common patterns.
-- Keep all password processing in the browser. The checker does not save or transmit what you enter.
+- Keep checker input in the browser. The checker does not save or transmit what you enter.
+- Use a same-origin JSON API for server-side password generation, with browser-side generation as a fallback.
 - Responsive layout for desktop and mobile.
+
+## API
+
+- `GET /api/health` — returns `{ "status": "ok" }`.
+- `POST /api/generate` — accepts JSON options for a password or passphrase and returns the generated value. It does not accept passwords to check.
+
+Server-generated values travel to the browser in the API response. The server does not persist or log them. For a public deployment, serve the app over HTTPS.
 
 ## Notes
 

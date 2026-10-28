@@ -1,0 +1,12 @@
+{
+  "name": "keysmith-password-tool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Keysmith password generator and local security checker",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
