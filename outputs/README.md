@@ -40,6 +40,10 @@ You can still open `index.html` directly. In that mode the browser generates pas
 
 Server-generated values travel to the browser in the API response. The server does not persist or log them. For a public deployment, serve the app over HTTPS.
 
+## Deploy a live demo
+
+This repository includes a Render Blueprint at the repository root. To create a free Node.js web service, open the [Render deploy page](https://render.com/deploy?repo=https://github.com/boyapatirishitha24/random-password-generator-security-checker), sign in, review the Blueprint, and deploy it. The first request after the free service has been idle may take about a minute while it wakes up.
+
 ## Notes
 
 Strength and entropy are educational estimates, not a breach-database lookup or a guarantee of safety. For the best protection, use a unique password for each account and store it in a reputable password manager.
